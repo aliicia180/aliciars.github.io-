@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetCare</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>🐾 PetCare</header>
+
+      <!-- HOME -->
+      <div class="screen active" id="home">
+        <h2>Bienvenido a PetCare</h2>
+        <p>Gestión y bienestar para tus mascotas</p>
+        <button onclick="goTo('login')">Iniciar sesión</button>
+        <button onclick="goTo('register')">Registrarse</button>
+        <button onclick="goTo('info')">Sobre el proyecto</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="screen" id="login">
+        <h2>Iniciar sesión</h2>
+        <input placeholder="Correo electrónico" />
+        <input type="password" placeholder="Contraseña" />
+        <button onclick="goTo('dashboard')">Entrar</button>
+        <button onclick="goTo('home')">Volver</button>
+      </div>
+
+      <!-- REGISTRO -->
+      <div class="screen" id="register">
+        <h2>Registro</h2>
+        <input placeholder="Nombre completo" />
+        <input placeholder="Correo electrónico" />
+        <input type="password" placeholder="Contraseña" />
+        <button onclick="goTo('dashboard')">Crear cuenta</button>
+        <button onclick="goTo('home')">Volver</button>
+      </div>
+
+      <!-- DASHBOARD -->
+      <div class="screen" id="dashboard">
+        <h2>Mis Mascotas</h2>
+        <div class="card">
+          🐶 <strong>Luna</strong><br />Labrador · 3 años · Vacunas al día
+        </div>
+        <div class="card">
+          🐱 <strong>Max</strong><br />Persa · 2 años · Vacunas pendientes
+        </div>
+        <button onclick="goTo('agenda')">Agenda</button>
+        <button onclick="goTo('services')">Servicios</button>
+        <button onclick="goTo('home')">Cerrar sesión</button>
+      </div>
+
+      <!-- AGENDA -->
+      <div class="screen" id="agenda">
+        <h2>📅 Agenda</h2>
+        <div class="card">Veterinario<br />15/11/2025 · 10:00</div>
+        <div class="card">Paseo con Luna<br />17/11/2025 · 18:00</div>
+        <button onclick="goTo('dashboard')">Volver</button>
+      </div>
+
+      <!-- SERVICIOS -->
+      <div class="screen" id="services">
+        <h2>💼 Servicios</h2>
+        <div class="card">Paseadora: Ana Torres<br />⭐⭐⭐⭐☆</div>
+        <div class="card">Cuidador: Juan López<br />⭐⭐⭐⭐⭐</div>
+        <button onclick="goTo('dashboard')">Volver</button>
+      </div>
+
+      <!-- INFO DEL PROYECTO -->
+      <div class="screen" id="info">
+        <h2>📘 Sobre el proyecto</h2>
+        <p><strong>Nombre del proyecto:</strong> PetCare</p>
+        <p>
+          <strong>Descripción:</strong> Aplicación prototipo para la gestión del
+          cuidado, salud y servicios relacionados con mascotas.
+        </p>
+        <p>
+          <strong>Objetivo:</strong> Mejorar la organización y el bienestar de
+          las mascotas mediante tecnología.
+        </p>
+        <p>
+          <strong>Público objetivo:</strong> Dueños de mascotas y cuidadores
+          profesionales.
+        </p>
+        <p>
+          <strong>Funcionalidades:</strong> Registro de mascotas, agenda de
+          eventos, gestión de servicios y visualización de cuidadores.
+        </p>
+        <p><strong>Tecnologías:</strong> HTML, CSS y JavaScript.</p>
+        <p>
+          <strong>Estado del proyecto:</strong> Prototipo funcional académico.
+        </p>
+        <p><strong>Autora:</strong> Alicia Ruiz Sarrión</p>
+        <button onclick="goTo('home')">Volver al inicio</button>
+      </div>
+    </div>
+    <script>
+      function goTo(screenId) {
+        const screens = document.querySelectorAll(".screen");
+        screens.forEach((screen) => screen.classList.remove("active"));
+        const target = document.getElementById(screenId);
+        if (target) target.classList.add("active");
+      }
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
